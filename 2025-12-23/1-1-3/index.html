@@ -10,19 +10,37 @@
 			"use strict";
 
 			let username = "신주민";
-			let age = 20;
+			let age = 15;
 			let isStudent = true;
-
 			let hobby = ["게임", "넷플릭스 감상"];
 			let emptyVal = null;
+			let status = age >= 18 ? "성인" : "미성년자";
 
+			alert(
+				"username의 타입은 " +
+					typeof username +
+					"입니다.\n" +
+					"age의 타입은 " +
+					typeof age +
+					"입니다.\n" +
+					"isStudent의 타입은 " +
+					typeof isStudent +
+					"입니다.\n" +
+					"hobby의 타입은 " +
+					typeof hobby +
+					"입니다.\n" +
+					"emptyVal의 타입은 " +
+					typeof emptyVal +
+					"입니다.\n\n" +
+					"그리고 당신의 신분은 " +
+					status +
+					" 입니다."
+			);
 			console.log("username의 타입은 " + typeof username + " 입니다.");
 			console.log("age의 타입은 " + typeof age + " 입니다.");
 			console.log("isStudent의 타입은 " + typeof isStudent + " 입니다.");
 			console.log("hobby의 타입은 " + typeof hobby + " 입니다.");
 			console.log("emptyVal의 타입은 " + typeof emptyVal + " 입니다.");
-
-			let status = age >= 18 ? "성인" : "학생";
 			console.log("당신의 신분은 " + status + " 입니다.");
 		</script>
 	</body>
