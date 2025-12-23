@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>나만의 프로필 데이터 만들기</title>
+	</head>
+	<body>
+		<script>
+			"use strict";
+
+			let username = "신주민";
+			let age = 20;
+			let isStudent = true;
+
+			let hobby = ["게임", "넷플릭스 감상"];
+			let emptyVal = null;
+
+			console.log("username의 타입은 " + typeof username + " 입니다.");
+			console.log("age의 타입은 " + typeof age + " 입니다.");
+			console.log("isStudent의 타입은 " + typeof isStudent + " 입니다.");
+			console.log("hobby의 타입은 " + typeof hobby + " 입니다.");
+			console.log("emptyVal의 타입은 " + typeof emptyVal + " 입니다.");
+
+			let status = age >= 18 ? "성인" : "학생";
+			console.log("당신의 신분은 " + status + " 입니다.");
+		</script>
+	</body>
+</html>
