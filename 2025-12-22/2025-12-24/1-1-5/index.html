@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			"use strict;";
+
+			function calculate(a, b, oper) {
+				switch (oper) {
+					case "+":
+						return a + b;
+					case "-":
+						return a - b;
+					case "*":
+						return a * b;
+					case "/":
+						if (b === 0) return "0으로는 나눌수 없습니다.";
+						return a / b;
+					default:
+						return "잘못된 연산자";
+				}
+			}
+
+			const a = Number(prompt("첫 번째 숫자를 입력하세요"));
+			const oper = prompt("연산자를 입력하세요 (+, -, *, /)");
+			const b = Number(prompt("두 번째 숫자를 입력하세요"));
+
+			console.log(
+				a + " " + oper + " " + b + " " + "=" + " " + calculate(a, b, oper)
+			);
+		</script>
+	</body>
+</html>

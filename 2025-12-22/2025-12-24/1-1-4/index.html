@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			"use strict;";
+
+			function gugudan(num) {
+				for (let i = 1; i <= 9; i++) {
+					if (num < 2 || num > 9) return "2~9사이의 숫자 하나만 입력하세요";
+					console.log(num + "*" + i + "=" + num * i);
+				}
+			}
+
+			const input = prompt("2~9중에 하나의 숫자를 입력하세요");
+			const num = Number(input);
+
+			gugudan(num);
+		</script>
+	</body>
+</html>
