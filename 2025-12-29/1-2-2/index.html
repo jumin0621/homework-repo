@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			"use strict;";
+
+			let cart = [];
+			const pnames = [];
+
+			cart.push({ product: "컴퓨터", price: 1000000, qty: 1 });
+			cart.push({ product: "모니터", price: 200000, qty: 2 });
+			cart.push({ product: "마우스", price: 10000, qty: 1 });
+			cart.push({ product: "키보드", price: 20000, qty: 1 });
+			cart.push({ product: "공유기", price: 40000, qty: 1 });
+
+			console.log(cart);
+
+			cart.splice(2, 1);
+			console.log(cart);
+
+			for (const pname of cart) {
+				pnames.push(pname.product);
+			}
+
+			console.log(
+				"현재 장바구니에 있는 품목은 " + pnames.join(",") + "입니다."
+			);
+
+			cart.sort((a, b) => a.price - b.price);
+			console.log(cart);
+		</script>
+	</body>
+</html>
