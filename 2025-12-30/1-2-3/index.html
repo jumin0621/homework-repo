@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			const student = {
+				name: "신주민",
+				age: 20,
+				scores: { math: 56, english: 99 },
+
+				getProperty(obj, key) {
+					return obj[key];
+				},
+
+				getAverage() {
+					const keys = Object.keys(this.scores);
+					let sum = 0;
+
+					for (const key of keys) {
+						sum = sum + this.getProperty(this.scores, key);
+					}
+					return sum / keys.length;
+				},
+			};
+
+			console.log(
+				student.name,
+				"님의 평균 점수는",
+				student.getAverage(),
+				"점 입니다."
+			);
+
+			const copy = { ...student, scores: { ...student.scores } };
+
+			copy.scores.math = 90;
+			copy.scores.english = 88;
+
+			console.log(
+				"원본 math :",
+				student.scores.math,
+				"복사본 math :",
+				copy.scores.math
+			);
+			console.log(
+				"원본 english :",
+				student.scores.english,
+				"복사본 english :",
+				copy.scores.english
+			);
+		</script>
+	</body>
+</html>
