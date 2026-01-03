@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>프로필 카드 조작하기</title>
+	</head>
+	<body>
+		<div class="profile-card" data-user-id="sjm">
+			<h2 class="profile-name">여기에 이름 출력</h2>
+			<button class="profile-btn">버튼</button>
+		</div>
+
+		<script>
+			const card = document.querySelector(".profile-card");
+			const nameEl = document.querySelector(".profile-name");
+			const btn = document.querySelector(".profile-btn"); // 선배가 만든 버튼 클래스/아이디로 바꿔줘
+
+			btn.addEventListener("click", () => {
+				nameEl.textContent = "홍길동";
+
+				card.classList.toggle("dark-mode");
+
+				console.log(card.dataset.userId);
+
+				if (!card.querySelector(".new-tag")) {
+					const p = document.createElement("p");
+					p.className = "new-tag";
+					p.textContent = "새로 추가한 태그 요소!";
+					card.appendChild(p);
+				}
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>DOM 탐색기</title>
+	</head>
+	<body>
+		<style>
+			a {
+				cursor: default;
+				text-decoration: none;
+				color: inherit;
+			}
+		</style>
+		<h1>DOM 탐색기</h1>
+
+		<div id="wrap">
+			<button id="myBtn" class="btn">버튼(click)</button>
+			<button class="btn">자식2</button>
+			<a id="myLink" class="link" href="#">자식3</a>
+			<span class="badge">자식4</span>
+		</div>
+
+		<h2>결과</h2>
+		<pre id="result">버튼을 눌러보세요.</pre>
+
+		<script>
+			const btn = document.querySelector("#myBtn");
+			const result = document.querySelector("#result");
+
+			btn.addEventListener("click", () => {
+				// 클릭한 요소(버튼) 정보
+				const meInfo = formatNode(btn);
+
+				// 부모 정보
+				const parent = btn.parentElement;
+				const parentInfo = parent ? formatNode(parent) : "(없음)";
+
+				// children 정보: 버튼의 children은 보통 0이라
+				// 보통 과제에서 의미 있게 보려면 parent의 children을 보여주는 게 좋아요.
+				const kids = parent ? [...parent.children] : [];
+				const kidsInfo = kids.length
+					? kids
+							.map(
+								(child, i) =>
+									`[${i}] ${formatNode(child)} | parent: ${formatNode(
+										child.parentElement
+									)}`
+							)
+							.join("\n")
+					: "(없음)";
+
+				result.textContent =
+					`▶ 클릭한 요소\n${meInfo}\n\n` +
+					`▶ parentElement\n${parentInfo}\n\n` +
+					`▶ parent.children (${kids.length}개)\n${kidsInfo}`;
+			});
+
+			// tagName, id, className, textContent 한 번에 출력용
+			function formatNode(node) {
+				if (!node) return "(null)";
+				const tagName = node.tagName;
+				const id = node.id || "(없음)";
+				const className = node.className
+					? String(node.className).trim()
+					: "(없음)";
+				const textContent = node.textContent
+					? node.textContent.trim().replace(/\s+/g, " ")
+					: "";
+				return `tagName: ${tagName}, id: ${id}, className: ${className}, textContent: ${textContent}`;
+			}
+		</script>
+	</body>
+</html>
