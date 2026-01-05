@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="button-group">
+			<button data-action="add">추가</button>
+			<button data-action="edit">수정</button>
+			<button data-action="delete">삭제</button>
+		</div>
+
+		<script>
+			const group = document.querySelector(".button-group");
+
+			group.addEventListener("click", function (e) {
+				const btn = e.target.closest("button");
+
+				if (!btn || !group.contains(btn)) return;
+
+				const action = btn.dataset.action;
+
+				switch (action) {
+					case "add":
+						console.log("Add Clicked");
+						break;
+					case "edit":
+						console.log("Edit Clicked");
+						break;
+					case "delete":
+						console.log("Delete Clicked");
+						break;
+					default:
+						break;
+				}
+			});
+		</script>
+	</body>
+</html>
