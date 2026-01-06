@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>사용자 정보 안전하게 출력하기</title>
+	</head>
+	<body>
+		<script>
+			const users = [
+				{
+					name: "Kim",
+					profile: { bio: "Hi" },
+				},
+				{
+					name: "Lee",
+					profile: null,
+				},
+			];
+
+			for (const user of users) {
+				const bio = user.profile?.bio ?? "소개 없음";
+				console.log(`<div>${user.name}: ${bio}</div>`);
+			}
+		</script>
+	</body>
+</html>
