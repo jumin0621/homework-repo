@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function createCounter() {
+        let count = 0; // private
+
+        return {
+          increment() {
+            count += 1;
+            return count;
+          },
+          decrement() {
+            count -= 1;
+            return count;
+          },
+          getValue() {
+            return count;
+          },
+          reset() {
+            count = 0;
+            return count;
+          },
+        };
+      }
+
+      const counter1 = createCounter();
+      const counter2 = createCounter();
+
+      console.log(`카운터1 inc -> `, counter1.increment());
+      console.log(`카운터1 dec -> `, counter1.decrement());
+      console.log(`카운터1 val -> `, counter1.getValue());
+
+      console.log(`카운터2 inc -> `, counter2.increment());
+      console.log(`카운터2 dec -> `, counter2.decrement());
+      console.log(`카운터3 val -> `, counter2.getValue());
+
+      console.log(`reset -> `, counter1.reset());
+      console.log(`reset val -> `, counter1.reset());
+
+      console.log(`함수 밖에서 접근해본다!`, counter1.count);
+    </script>
+  </body>
+</html>

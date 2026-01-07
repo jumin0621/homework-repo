@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const hero = {
+        name: "Batman",
+        call() {
+          console.log(this.name);
+        },
+      };
+
+      // 1) this 손실 (undefined)
+      const stolenCall = hero.call;
+      stolenCall(); // 메서드가 아닌 함수로 호출했기 때문에 this가 손실됨.
+
+      // 2) bind로 해결
+      const fixedCall = hero.call.bind(hero);
+      fixedCall();
+
+      // 3) setTimeout 안에서 this 잃어버리는 예시
+      setTimeout(hero.call, 0); // this 잃어버림
+
+      // 4) setTimeout 안에서 this 출력하는 예시
+      setTimeout(hero.call.bind(hero), 0); // bind로 쓰거나
+      setTimeout(() => hero.call(), 0); // 화살표함수로 쓰거나
+    </script>
+  </body>
+</html>
