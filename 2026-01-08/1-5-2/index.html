@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			console.log("1. 가게 오픈"); // 동기 코드라서 바로 실행됨
+
+			setTimeout(() => {
+				console.log("2. 일반 손님 주문 완료");
+			}, 0); // 1초로 늘려도 순서는 바뀌지않음. 단지 1초후에 출력될뿐
+
+			Promise.resolve().then(() => {
+				console.log("3. VIP 손님 입장");
+			}); // Promise 우선순위가 높아서 timeout보다 먼저 실행됨.
+
+			console.log("4. 재료 준비"); // 동기 코드라서 바로 실행됨
+		</script>
+	</body>
+</html>
