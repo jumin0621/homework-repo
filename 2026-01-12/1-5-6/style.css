@@ -1,0 +1,122 @@
+/* ===== 기본 리셋 ===== */
+* {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR",
+		Arial, sans-serif;
+	background: linear-gradient(180deg, #0b1220 0%, #0f172a 100%);
+	color: #e5e7eb;
+}
+
+.container {
+	width: min(560px, calc(100% - 32px));
+	margin: 80px auto;
+	padding: 22px;
+	border-radius: 16px;
+	background: rgba(17, 24, 39, 0.75);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+	backdrop-filter: blur(10px);
+}
+
+.title {
+	margin: 0 0 14px;
+	font-size: 26px;
+	font-weight: 800;
+	text-align: center;
+	letter-spacing: -0.02em;
+}
+
+#todo-input {
+	width: 100%;
+	padding: 14px 14px;
+	border-radius: 12px;
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	background: rgba(2, 6, 23, 0.6);
+	color: #e5e7eb;
+	outline: none;
+	font-size: 15px;
+	transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+#todo-input::placeholder {
+	color: rgba(229, 231, 235, 0.55);
+}
+
+#todo-input:focus {
+	border-color: rgba(99, 102, 241, 0.6);
+	box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.18);
+}
+
+#add-btn {
+	width: 100%;
+	margin-top: 12px;
+	padding: 13px 14px;
+	border: none;
+	border-radius: 12px;
+	background: linear-gradient(135deg, #6366f1 0%, #22c55e 140%);
+	color: white;
+	font-weight: 700;
+	font-size: 15px;
+	cursor: pointer;
+	transition: transform 0.08s ease, filter 0.15s ease;
+}
+
+#add-btn:hover {
+	filter: brightness(1.05);
+}
+#add-btn:active {
+	transform: translateY(1px);
+}
+
+#todo-list {
+	list-style: none;
+	padding: 0;
+	margin: 18px 0 0;
+	display: grid;
+	gap: 10px;
+}
+
+#todo-list li {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+
+	padding: 14px 14px;
+	border-radius: 14px;
+	background: rgba(2, 6, 23, 0.55);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+}
+
+#todo-list li:hover {
+	border-color: rgba(255, 255, 255, 0.14);
+}
+
+#todo-list li {
+	word-break: break-word;
+}
+#todo-list li > button {
+	flex: 0 0 auto;
+}
+
+#todo-list button {
+	padding: 8px 10px;
+	border: 1px solid rgba(239, 68, 68, 0.35);
+	border-radius: 10px;
+	background: rgba(239, 68, 68, 0.12);
+	color: #fecaca;
+	cursor: pointer;
+	font-weight: 700;
+	transition: background 0.15s ease, transform 0.08s ease;
+}
+
+#todo-list button:hover {
+	background: rgba(239, 68, 68, 0.18);
+}
+#todo-list button:active {
+	transform: translateY(1px);
+}

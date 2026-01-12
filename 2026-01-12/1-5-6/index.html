@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<h1 class="title">To-do List</h1>
+			<input id="todo-input" type="text" placeholder="할 일 입력" />
+			<button id="add-btn">추가</button>
+
+			<ul id="todo-list"></ul>
+		</div>
+
+		<script>
+			const input = document.querySelector("#todo-input");
+			const addBtn = document.querySelector("#add-btn");
+			const list = document.querySelector("#todo-list");
+
+			const STORAGE_KEY = "todos";
+			let todos = [];
+
+			// 1) localStorage 저장
+			function saveTodos() {
+				localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
+			}
+
+			// 2) localStorage 불러오기
+			function loadTodos() {
+				const saved = localStorage.getItem(STORAGE_KEY);
+				todos = saved ? JSON.parse(saved) : [];
+			}
+
+			// 3) 화면 렌더링
+			function renderTodos() {
+				list.innerHTML = "";
+
+				todos.forEach((text, idx) => {
+					const li = document.createElement("li");
+					li.textContent = text;
+
+					// 삭제
+					const delBtn = document.createElement("button");
+					delBtn.textContent = "삭제";
+					delBtn.addEventListener("click", () => {
+						todos.splice(idx, 1);
+						saveTodos();
+						renderTodos();
+					});
+
+					li.appendChild(delBtn);
+					list.appendChild(li);
+				});
+			}
+
+			// 4) 추가 기능
+			function addTodo() {
+				const value = input.value.trim();
+				if (!value) return;
+
+				todos.push(value);
+				input.value = "";
+
+				saveTodos();
+				renderTodos();
+			}
+
+			addBtn.addEventListener("click", addTodo);
+			input.addEventListener("keydown", (e) => {
+				if (e.key === "Enter") addTodo();
+			});
+
+			loadTodos();
+			renderTodos();
+		</script>
+	</body>
+</html>
