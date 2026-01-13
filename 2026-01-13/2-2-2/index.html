@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>문자열 조작 함수 만들기</title>
+	</head>
+	<body>
+		<script>
+			// 문자열 뒤집기
+			function reverse(str) {
+				return str.split("").reverse().join("");
+			}
+
+			//숫자 3자리 패딩
+			function padThree(num) {
+				return String(num).padStart(3, "0");
+			}
+
+			// 특정 문자 전부 삭제
+			function removeAll(str, char) {
+				return str.replaceAll(char, "");
+			}
+
+			const rvs = reverse("Hello");
+			console.log("reverse('Hello') ->", rvs);
+
+			const pth = padThree(5);
+			console.log("padThree(5) ->", pth);
+
+			const rmv = removeAll("banana", "a");
+			console.log("removelAll('banana', 'a') ->", rmv);
+		</script>
+	</body>
+</html>

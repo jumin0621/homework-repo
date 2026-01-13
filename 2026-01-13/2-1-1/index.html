@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>간단한 구현 문제 풀어보기</title>
+	</head>
+	<body>
+		<script>
+			function sum(n) {
+				let total = 0;
+
+				for (let i = 1; i <= n; i++) {
+					total += i;
+				}
+
+				return total;
+			}
+
+			function sumEven(n) {
+				let total = 0;
+
+				for (let i = 1; i <= n; i++) {
+					if (i % 2 == 0) total += i;
+				}
+
+				return total;
+			}
+
+			function sumOdd(n) {
+				let total = 0;
+
+				for (let i = 1; i <= n; i++) {
+					if (i % 2 == 1) total += i;
+				}
+
+				return total;
+			}
+
+			const answerSum = sum(10);
+			console.log("1부터 10까지의 합계는", answerSum, "입니다");
+
+			const answerEven = sumEven(10);
+			console.log("1부터 10까지 짝수의 합계는", answerEven, "입니다");
+
+			const answerOdd = sumEven(10);
+			console.log("1부터 10까지 홀수의 합계는", answerOdd, "입니다");
+		</script>
+	</body>
+</html>
