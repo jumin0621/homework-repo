@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			async function getPosts() {
+				try {
+					const url = "https://jsonplaceholder.typicode.com/posts";
+					const res = await fetch(url);
+
+					if (!res.ok) throw new Error("HTTP Error:" + res.status);
+
+					const data = await res.json();
+					console.log("성공", data);
+				} catch (err) {
+					console.error("실패", err);
+				}
+			}
+
+			getPosts();
+		</script>
+	</body>
+</html>

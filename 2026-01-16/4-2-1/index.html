@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			async function getPosts() {
+				// 성공 url
+				const url = "https://jsonplaceholder.typicode.com/posts/1";
+
+				// 실패 url
+				//const url = "https://jsonplaceholder.typicode.com/posts/9999";
+				try {
+					const response = await fetch(url);
+
+					if (!response.ok) {
+						throw new Error("요청 실패! 상태 코드: " + response.status);
+					}
+
+					const data = await response.json();
+					console.log("성공!", data);
+				} catch (err) {
+					console.log("실패!", err.message);
+				}
+			}
+
+			getPosts();
+		</script>
+	</body>
+</html>
