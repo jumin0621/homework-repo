@@ -1,0 +1,79 @@
+.page {
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+	background: #0b1220;
+	color: #e5e7eb;
+	padding: 24px;
+}
+
+.card {
+	width: 520px;
+	height: 320px;
+	border-radius: 14px;
+	background: linear-gradient(180deg, #0f1b2c, #0c1624);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	box-shadow: 0 14px 45px rgba(0, 0, 0, 0.45);
+	display: grid;
+	align-content: center;
+	justify-items: center;
+	gap: 18px;
+	padding: 24px;
+}
+
+.label {
+	font-size: 12px;
+	letter-spacing: 0.12em;
+	color: rgba(229, 231, 235, 0.6);
+}
+
+.time {
+	font-size: 44px;
+	font-weight: 800;
+	color: #38bdf8;
+}
+
+.btn {
+	width: 140px;
+	height: 48px;
+	border: none;
+	border-radius: 10px;
+	font-weight: 800;
+	cursor: pointer;
+	color: #fff;
+}
+
+.btn.stop {
+	background: #ef4444;
+}
+
+.btn.start {
+	background: #22c55e;
+}
+
+.btn:hover {
+	filter: brightness(1.05);
+}
+
+.status {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 14px;
+	color: rgba(229, 231, 235, 0.75);
+}
+
+.dot {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #6b7280;
+}
+
+.status.on .dot {
+	background: #22c55e;
+}
+
+.status.off .dot {
+	background: #ef4444;
+}

@@ -1,0 +1,106 @@
+.page {
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+	background: #0b1220;
+	padding: 24px;
+	color: #e5e7eb;
+}
+
+/* 오른쪽 UI 카드 전체 */
+.ui-card {
+	width: 520px;
+	border-radius: 16px;
+	background: #152033;
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	padding: 16px;
+	box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* 상품 버튼 줄 */
+.btn-row {
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+	margin-bottom: 14px;
+}
+
+.pill {
+	border: none;
+	cursor: pointer;
+	padding: 10px 12px;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.08);
+	color: #e5e7eb;
+	border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.pill:hover {
+	filter: brightness(1.07);
+}
+
+/* 장바구니 영역 */
+.cart-wrap {
+	border-radius: 14px;
+	background: rgba(255, 255, 255, 0.04);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	padding: 14px;
+}
+
+.cart-title {
+	font-weight: 700;
+	margin-bottom: 10px;
+	color: rgba(229, 231, 235, 0.9);
+}
+
+.cart-box {
+	border-radius: 12px;
+	background: rgba(0, 0, 0, 0.2);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	padding: 12px;
+	min-height: 120px;
+}
+
+.empty {
+	color: rgba(229, 231, 235, 0.6);
+}
+
+.cart-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 6px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cart-item:last-child {
+	border-bottom: none;
+}
+
+.item-name {
+	opacity: 0.95;
+}
+
+.remove {
+	border: none;
+	background: transparent;
+	color: #fca5a5;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.remove:hover {
+	text-decoration: underline;
+}
+
+.total {
+	margin-top: 14px;
+	text-align: right;
+	font-size: 18px;
+	font-weight: 800;
+	color: #fbbf24;
+}
+
+.total span {
+	margin-left: 6px;
+}
